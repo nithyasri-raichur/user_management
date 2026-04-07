@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "user_management.js",
+  "type": "module",
+  "scripts": {
+    "start": "node user_management.js",
+    "dev": "nodemon user_management.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.0"
+  }
+}

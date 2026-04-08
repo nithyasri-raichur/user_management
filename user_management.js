@@ -105,15 +105,15 @@ const userUpdate = async(req,res)=>{
 
             const index = users.findIndex(u=> u.id===id); //find the position of the id in array
 
-        if(index === -1){
-            res.statusCode = 404;
-            res.end(JSON.stringify({message: 'User not found'}));
+            if(index === -1){
+                res.statusCode = 404;
+                res.end(JSON.stringify({message: 'User not found'}));
         }
-        else{
-            users[index] = {...users[index],...updatedData}; //spread method to merge the old+new data 
-            await fs.writeFile('./users.json',JSON.stringify(users)); //overwriting to the file 
-            //send response 
-            res.end(JSON.stringify(users[index])); //object->string
+            else{
+                users[index] = {...users[index],...updatedData}; //spread method to merge the old+new data 
+                await fs.writeFile('./users.json',JSON.stringify(users)); //overwriting to the file 
+                //send response 
+                res.end(JSON.stringify(users[index])); //object->string
 
         }
         
@@ -152,6 +152,12 @@ const deleteUser= async(req,res)=>{
         return res.end(JSON.stringify({message: 'Server Error'}));
     }
 }
+const notFoundHandler = (req,res) =>{
+    res.statusCode = 404;
+    res.write(JSON.stringify({message: 'Route not found'}));
+    res.end();
+}
+
 
 
 

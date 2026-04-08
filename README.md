@@ -12,10 +12,10 @@ Implemented a CRUD operation (GET,POST,PUT,DELETE) on user data stored in a JSON
 
 # How to run 
 1. Install dependencies (if any): 
-   npm install
+   - npm install
 2. Start server:
-   npm start
-or (with nodemon):
-   npm run dev
+   - npm start
+- or (with nodemon):
+   - npm run dev
 
    
